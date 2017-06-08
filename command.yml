@@ -1,0 +1,9 @@
+--- # COMMAND EXAMPLE
+- hosts: appserver
+  user: testuser
+  become: yes
+  tasks:
+    - name: Run script
+      command: /home/testuser/test.sh
+      register: output
+    - debug: var=output

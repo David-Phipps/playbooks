@@ -1,0 +1,9 @@
+--- # THIS IS SOME SHITS
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  tasks:
+    - name: Install web server
+      yum: name=httpd state=installed
+      register: result
+    - debug: var=result

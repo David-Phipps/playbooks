@@ -1,0 +1,6 @@
+--- # THIS IS SOME SHITS FOR SCRIPTS
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  tasks:
+    - script: ./date.sh

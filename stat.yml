@@ -1,0 +1,11 @@
+--- # THIS IS SOME SHITS
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  tasks:
+    - name: Does a file/dir in a path exist or not
+      stat: path=/home/testuser/abc
+      register: p
+    - debug: msg="Path exists and is a directory"
+      when: p.stat.isdir is defined and p.stat.isdir
+

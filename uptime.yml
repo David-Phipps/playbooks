@@ -1,0 +1,7 @@
+--- # THIS IS SOME SHITS
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  tasks:
+    - script: ./uptime.sh > /home/testuser/uptime.log
+    - script: ./date.sh > /home/testuser/date.log

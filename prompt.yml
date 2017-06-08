@@ -1,0 +1,13 @@
+--- # BITCHES LOVE PROMPTS
+- hosts: apacheweb
+  become: yes
+  gather_facts: no
+  user: testuser
+  vars_prompt:
+    - name: pkg_to_install
+      prompt: Install Wich Package Yo?
+      default: telnet
+      private: no
+  tasks:
+    - name: Install the indicated package
+      yum: pkg={{ pkg_to_install }} state=latest

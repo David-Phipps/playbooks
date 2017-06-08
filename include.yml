@@ -1,0 +1,10 @@
+--- # BITCHES LOVE INCLUDES EXAMPLE
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  gather_facts: no
+  tasks:
+    - include: plays/packages.yml
+    - name: Verify the telnet package is installed
+      command: yum list isntalled | grep telnet
+

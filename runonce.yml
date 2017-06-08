@@ -1,0 +1,12 @@
+--- # RUNONCE PLAYBOOK EXAMPLE
+- hosts: all
+  become: yes
+  user: testuser
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Run the update command on all hosts and log it
+      raw: /usr/bin/uptime > /home/testuser/uptimeshits.log
+    - name: List the /var directory and log it
+      raw: ls -al /var >> /home/testuser/dir.list
+      run_once: true

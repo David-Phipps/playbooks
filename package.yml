@@ -1,0 +1,7 @@
+--- # THIS IS SOME SHITS
+- hosts: apacheweb:aptserver
+  user: testuser
+  become: yes
+  tasks:
+    - name: Install Apache webserver
+      package: name=apache* state=latest

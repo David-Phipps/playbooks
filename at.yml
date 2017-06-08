@@ -1,0 +1,7 @@
+--- # THIS IS SOME AT SHITS
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  tasks:
+    - name: Example of a future command with at module
+      at: command="ls -al /var/log > /home/testuser/at.log" count=1 units="minutes"

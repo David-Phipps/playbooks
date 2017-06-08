@@ -1,0 +1,8 @@
+--- # THIS IS SOME SHITS
+- hosts: local
+  connection: local
+  user: testuser
+  become: yes
+  tasks:
+    - name: Format the data partition
+      filesystem: fstype=ext4 dev=/dev/xvdf1

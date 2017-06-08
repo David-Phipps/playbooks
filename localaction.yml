@@ -1,0 +1,10 @@
+--- # LOCALACTION DEMO
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  gather_facts: no
+  tasks: 
+  - name: Ping app server before we run our install
+    local_action: command ping -c 4 morningsides-hotmail-com4.mylabserver.com 
+  - name: Install Lynx on remote server
+    yum: pkg=lynx state=latest

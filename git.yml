@@ -1,0 +1,7 @@
+--- # THIS IS SOME SHITS
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  tasks:
+    - name: Checking out a git repo on the remote server
+      git: repo=https://github.com/David-Phipps/alien_invasion dest=/home/testuser/alien_invasion

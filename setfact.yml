@@ -1,0 +1,14 @@
+--- # THIS IS SOME SHITS SETFACTS
+- hosts: appserver
+  user: testuser
+  become: yes
+  gather_facts: no
+  vars:
+    playbook_version: 0.1
+  tasks:
+    - name: Local Variable Display
+      set_fact:
+        singlefact: SOMETHING
+    - debug: msg={{ playbook_version }}
+    - debug: msg={{ singlefact }}
+

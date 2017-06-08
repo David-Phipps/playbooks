@@ -1,0 +1,12 @@
+--- # TESTING THE J2 TEMPLATE MODULE
+- hosts: apacheweb:debian
+  user: testuser
+  become: yes
+  gather_facts: yes
+  vars:
+    userName: testuser
+    userPassword: password123
+    connectionType: SFTP
+  tasks:
+    - name: Install the config file customized for the system
+      template: src=files/test.conf.j2 dest=/home/testuser/test.conf owner=testuser group=testuser mode=750

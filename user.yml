@@ -1,0 +1,7 @@
+--- # THIS IS SOME USER
+- hosts: apacheweb
+  user: testuser
+  become: yes
+  tasks:
+    - name: Add the user called testapache to the apache web client
+      user: name=tstapache2 state=absent remove=yes

@@ -1,0 +1,7 @@
+--- # THIS IS SOME SHITS
+- hosts: aptserver
+  user: testuser
+  become: yes
+  tasks:
+    - name: copy and unarchive a file
+      unarchive: src=test.tar.gz dest=/home/testuser/unarchive

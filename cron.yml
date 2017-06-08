@@ -1,0 +1,7 @@
+--- # THIS IS A CRON EXAMPLE
+- hosts: apacheweb
+  user: testuser
+  gather_facts: no
+  tasks:
+    - name: Add a Cron job to the testuer
+      cron: name="list files" state=absent

@@ -1,0 +1,8 @@
+--- # THIS IS SOME SHITS
+- hosts: local 
+  user: testuser
+  become: yes
+  connection: local
+  tasks:
+    - name: mount the data partition
+      mount: name=/dev/xvdf1 src=/mnt/new state=absent
